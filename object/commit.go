@@ -55,6 +55,7 @@ var (
 	signRegexp            = regexp.MustCompile("^[^<]* <" + emailRegexpString + "> " + timestampRegexpString + "$")
 )
 
+// NewCommit は *Object を *Commit に変換して返す
 func NewCommit(o *Object) (*Commit, error) {
 	if o.Type != CommitObject {
 		return nil, ErrNotCommitObject
